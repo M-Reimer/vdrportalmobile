@@ -1,0 +1,174 @@
+
+/* Benutzer-Menü umbrechen */
+.userPanelInner,
+#userMenu {
+  display: block;
+}
+
+/* 3D-Effekt in der "Unteren Zeile" des Benutzer-Menüs raus */
+#userMenu,
+#userMenu a,
+#userMenu span {
+  text-shadow: none;
+  color: #000000;
+}
+
+/* Seiten-Logo verkleinern */
+img[src$="/vdr-portal.gif"] {
+  width: 71px !important;
+  height: 51px !important;
+}
+
+/* Seiten-Logo nach unten verschieben */
+.pageLogo,
+#search {
+  top: 8px !important;
+}
+
+/* Logo-Bereich schmaler machen */
+#logo {
+  height: 70px !important;
+}
+
+/* Überall Breitenbeschränkung und Mindestbreite aufheben */
+#footer, #header, #main, #mainMenu, #userPanel {
+    max-width: 100%;
+    min-width: 0px;
+}
+
+/* Kalender und Mitglieder in Navigationsleiste ausblenden */
+#mainMenuItem8,
+#mainMenuItem2 {
+  display: none;
+}
+
+/* Links in der Navigationsleiste enger zusammenziehen */
+.mainMenu a,
+.mainMenu .first a,
+.mainMenu .firstActive a,
+.mainMenu .last a,
+.mainMenu .lastActive a {
+  padding-right: 11px !important;
+  padding-left: 11px !important;
+  font-size: 1em;
+}
+
+
+/*
+ * Portal
+ */
+
+/* Erste und dritte Spalte im Portal raus */
+#tplPortal .first,
+#tplPortal .third {
+  display: none;
+}
+
+/* Spalte mit "Views" ausblenden */
+.columnViews {
+  display: none;
+}
+
+/* Button zum Springen zum letzten Posting vergrößern */
+.containerIconSmall img {
+  width: 24px;
+  height: 24px;
+}
+
+/*
+ * Galerie
+ */
+
+/* Zweite Spalte in der Galerie raus */
+.gallery .second {
+  display: none;
+}
+
+/* Seitennavigation in der Galerie auf volle Breite */
+.gallery .pageNavigation {
+  width: 100%;
+}
+
+/*
+ * Forum
+ */
+
+/* "Sidebar" an Nachrichten weg */
+.messageSidebar {
+  float: none !important;
+  margin: 0px !important;
+  width: 100% !important;
+}
+.messageContent {
+  margin: 0px !important;
+}
+.messageAuthor,
+.userSymbols,
+.userCredits,
+.userMessenger {
+  float: left;
+  padding: 3px !important;
+}
+.messageAuthor .userTitle,
+.messageAuthor .userRank {
+  display: inline !important;
+}
+.userAvatar {
+  display: none !important;
+}
+
+/* "Quick Reply" reduzieren */
+.formFieldLabel {
+  display: none;
+}
+.formField {
+  margin: 0px !important;
+}
+.formField > textarea {
+  width: 100% !important;
+}
+
+/* Spalte "Rating" raus */
+.columnRating {
+  display: none;
+}
+
+/* Einrückung der Foren in der Forenübersicht weiter nach links ziehen */
+#boardlist li ul .boardlistTitle .containerIcon {
+  margin-left: 5px !important;
+}
+#boardlist li ul .boardlistTitle .containerContent {
+  margin-left: 40px !important;
+}
+#boardlist li ul li ul .boardlistTitle .containerIcon {
+  margin-left: 40px !important;
+}
+#boardlist li ul li ul .boardlistTitle .containerContent {
+  margin-left: 75px !important;
+}
+
+/* Statistikspalte rechts aus der Forenübersicht raus */
+.boardlistStats {
+  display: none;
+}
+.boardlistLastPost {
+  width: 40% !important;
+}
+
+/* Buttons zum Seiten-Umschalten vergrößern */
+.pageNavigation {
+  font-size: 18px;
+}
+.pageNavigation img {
+  width: 24px;
+  height: 24px;
+}
+.pageNavigation .skip {
+  width: 24px;
+}
+
+/* Buttons zur Kontaktaufnahme vergrößern */
+.userMessenger img {
+  width: 24px;
+  height: 24px;
+}

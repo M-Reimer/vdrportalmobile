@@ -53,6 +53,17 @@ img[src$="/vdr-portal.gif"] {
   font-size: 1em;
 }
 
+/* Hintergrundbild aus Suchzeile raus */
+#search #searchInput {
+  background-image: none !important;
+  width: 150px !important;
+  padding-left: 2px !important;
+}
+
+/* Umbrechen in "Copyright-Zeile" erlauben */
+.copyright {
+  white-space: normal !important;
+}
 
 /*
  * Portal
@@ -171,4 +182,51 @@ img[src$="/vdr-portal.gif"] {
 .userMessenger img {
   width: 24px;
   height: 24px;
+}
+
+/*
+ * Private Nachrichten
+ */
+
+/* Ordnerliste nach oben */
+.pmFolders {
+  float: none !important;
+  width: 100% !important;
+}
+.pmMessages {
+  padding-left: 0px !important;
+}
+
+/*
+ * Profile
+ */
+
+/* Platz für Avatar rausnehmen */
+#userCardCredits {
+  margin-left: 0px !important;
+}
+
+/* Buttons in eigene Zeile */
+#userCardCredits .smallButtons {
+  position: relative !important;
+}
+
+/* Spalten untereinander */
+#tplUserProfile .column {
+  display: block;
+}
+#tplUserProfile .layout-2 .first,
+#tplUserProfile .layout-2 .second {
+  width: 100%;
+}
+
+/* Keine Mindestbreite in Spalten */
+#tplUserProfile .contentBox {
+  min-width: none;
+}
+
+/* Abstand links und rechts an Spalten entfernen */
+#tplUserProfile .layout-2 .columnInner {
+  padding-left: 0px;
+  padding-right: 0px;
 }

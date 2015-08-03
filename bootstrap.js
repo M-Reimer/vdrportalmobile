@@ -128,6 +128,12 @@ function ModifyHTML(aContent) {
     // Inject "meta viewport" header
     aContent = aContent.replace(/(<\/head>)/, '<meta name="viewport" content="width=device-width"/> $1');
 
+    // Modify the "Search dropdown" handling. Default is to pop up if the text
+    // field is clicked. On Android this would pop up the keyboard.
+    aContent = aContent.replace(/(<div class=\"searchContainer\">)/, '$1 <img src="resource://vdrportalmobile/search-dropdown.png" id="searchInputPopup"/>');
+    aContent = aContent.replace(/id="searchInputMenu"/, 'id="searchInputPopupMenu"');
+    aContent = aContent.replace(/popupMenuList\.register\("searchInput"\)/, 'popupMenuList.register("searchInputPopup")');
+
     // Drop avatar images
     aContent = aContent.replace(/<img src=\"wcf\/images\/avatars\/[^>]+>/g, "");
 

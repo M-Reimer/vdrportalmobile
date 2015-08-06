@@ -19,6 +19,12 @@ img[src$="/vdr-portal.gif"] {
   height: 51px !important;
 }
 
+/* Link-Bereich oben auf Größe des Seiten-Logos reduzieren */
+#logo a.pageLogo {
+  height: auto !important;
+  width: auto !important;
+}
+
 /* Seiten-Logo nach unten verschieben */
 .pageLogo,
 #search {
@@ -170,7 +176,7 @@ img[src$="/vdr-portal.gif"] {
 .pageNavigation {
   font-size: 18px;
 }
-.pageNavigation img {
+.pageNavigation .skip img {
   width: 24px;
   height: 24px;
 }

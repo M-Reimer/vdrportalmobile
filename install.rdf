@@ -7,7 +7,7 @@
     <em:id>{a3e3a928-7396-4ea5-9652-8ffc9008fa19}</em:id>
     <em:name>VDR-Portal Mobile</em:name>
     <em:description>Mobile style for vdr-portal.de</em:description>
-    <em:version>1.0.0</em:version>
+    <em:version>1.1.0</em:version>
     <em:creator>Manuel Reimer</em:creator>
     <em:homepageURL>https://github.com/M-Reimer/vdrportalmobile</em:homepageURL>
     <em:type>2</em:type>

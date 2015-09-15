@@ -25,10 +25,6 @@ function startup(data, reason) {
 }
 
 function shutdown(data, reason) {
-  // When the application is shutting down we normally don't have to clean up
-  if (reason == APP_SHUTDOWN)
-    return;
-
   Services.obs.removeObserver(httpRequestObserver, "http-on-examine-response");
   Services.obs.removeObserver(httpRequestObserver, "http-on-examine-cached-response");
 }

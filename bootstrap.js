@@ -100,6 +100,8 @@ TracingListener.prototype = {
     var binaryOutputStream = Components.classes["@mozilla.org/binaryoutputstream;1"].createInstance(Components.interfaces.nsIBinaryOutputStream);
 
     var data = ModifyHTML(this.receivedData.join(""));
+    if (data == "") // Workaround to get rid of NS_ERROR_OUT_OF_MEMORY
+      data = " ";
 
     storageStream.init(8192, data.length, null);
     binaryOutputStream.setOutputStream(storageStream.getOutputStream(0));
@@ -121,6 +123,7 @@ TracingListener.prototype = {
 function ModifyHTML(aContent) {
     // Inject loading of our built-in mobile CSS
     aContent = aContent.replace(/(<\/head>)/, '<link rel="stylesheet" href="resource://vdrportalmobile/mobile.css"/> $1');
+
     // Inject "meta viewport" header
     aContent = aContent.replace(/(<\/head>)/, '<meta name="viewport" content="width=device-width"/> $1');
 
@@ -129,6 +132,10 @@ function ModifyHTML(aContent) {
     aContent = aContent.replace(/(<div class=\"searchContainer\">)/, '$1 <img src="resource://vdrportalmobile/search-dropdown.png" id="searchInputPopup"/>');
     aContent = aContent.replace(/id="searchInputMenu"/, 'id="searchInputPopupMenu"');
     aContent = aContent.replace(/popupMenuList\.register\("searchInput"\)/, 'popupMenuList.register("searchInputPopup")');
+
+    // Modify the "mark read" feature in the search result page.
+    // Default is to mark read on doubleclick. Just "click" after modification.
+    aContent = aContent.replace(/(<script [^>]*src=\"js\/ThreadMarkAsRead\.class\.js\"><\/script>)/, '$1 <script>threadMarkAsRead.init = function(threadID) { var icon = document.getElementById("threadEdit" + threadID); if (icon) { icon.threadID = threadID; icon.onclick = function() { threadMarkAsRead.markAsRead(parseInt(this.threadID)); } } };</script>');
 
     // Drop avatar images
     aContent = aContent.replace(/<img src=\"wcf\/images\/avatars\/[^>]+>/g, "");

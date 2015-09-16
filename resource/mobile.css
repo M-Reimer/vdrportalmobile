@@ -66,6 +66,26 @@ img[src$="/vdr-portal.gif"] {
   padding-left: 2px !important;
 }
 
+/* Überlange Wörter im Betreff "irgendwo" umbrechen */
+.tableList .columnTopic div.topic, /* Portal und Foren-Übersichten */
+.pmMessages .columnTitle p {       /* Private Nachrichten */
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  word-wrap: break-word;
+}
+#tplPortal .tableList .columnTopic div.topic { /* Sonderfall Portal */
+  width: calc(100% - 24px);
+}
+
+/* "Antworten"-Spalte schmaler machen */
+th.columnReplies span,
+th.columnReplies a {
+  width: 2.5em;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
 /* Umbrechen in "Copyright-Zeile" erlauben */
 .copyright {
   white-space: normal !important;

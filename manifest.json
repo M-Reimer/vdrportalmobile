@@ -10,6 +10,7 @@
       "id": "{a3e3a928-7396-4ea5-9652-8ffc9008fa19}"
     }
   },
+
   "content_scripts": [
   {
     "matches": ["http://www.vdr-portal.de/*"],
@@ -20,6 +21,10 @@
   ],
   "web_accessible_resources": [
     "resource/search-dropdown.png"
+  ],
+
+  "permissions": [
+    "webRequest", "webRequestBlocking", "http://www.vdr-portal.de/*"
   ],
   "background": {
     "scripts": ["background.js"]

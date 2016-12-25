@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "VDR-Portal Mobile",
+  "description": "Mobile style for vdr-portal.de",
+  "version": "1.2.0",
+  "homepage_url": "https://github.com/M-Reimer/vdrportalmobile",
+  "author": "Manuel Reimer",
+  "applications": {
+    "gecko": {
+      "id": "{a3e3a928-7396-4ea5-9652-8ffc9008fa19}"
+    }
+  },
+  "content_scripts": [
+  {
+    "matches": ["http://www.vdr-portal.de/*"],
+    "js": ["resource/contentscript.js"],
+    "css": ["resource/mobile.css"],
+    "run_at": "document_end"
+  }
+  ],
+  "web_accessible_resources": [
+    "resource/search-dropdown.png"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
